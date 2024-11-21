@@ -26,26 +26,12 @@ def allureVersion = "2.21.0",
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:7.2.3",
             "org.junit.jupiter:junit-jupiter:5.10.0",
-            'com.github.javafaker:javafaker:1.0.2',
             'org.slf4j:slf4j-simple:2.0.7',
-            'io.qameta.allure:allure-selenide:2.27.0',
             'org.aspectj:aspectjweaver:1.9.22.1'
     )
-    testImplementation 'org.testng:testng:7.1.0'
 }
-tasks.withType(Test) {
-    useJUnitPlatform()
-    systemProperties(System.getProperties())
 
-    testLogging {
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
-    }
-}
 test {
     useJUnitPlatform()
 }
